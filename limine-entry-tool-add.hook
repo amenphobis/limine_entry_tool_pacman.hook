@@ -1,0 +1,14 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = linux
+Target = linux-*
+
+[Action]
+Description = Update Limine Boot entries
+Depends = limine-entry-tool-git
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/limine_entry_tool_add.sh
+NeedsTargets
+

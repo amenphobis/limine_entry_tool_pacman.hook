@@ -1,0 +1,12 @@
+[Trigger]
+Operation = Remove
+Type = Package
+Target = linux
+Target = linux-*
+
+[Action]
+Description = Remove Limine Boot entries
+Depends = limine-entry-tool-git
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/limine_entry_tool_remove.sh
+NeedsTargets
